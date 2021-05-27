@@ -34,22 +34,24 @@ This step is only necessary once.
    To create a new artifact for a given bindings file, run
    [`create_bindings_artifact.jl`](create_bindings_artifact.jl) as follows:
    ```bash
-   julia --project=@. create_bindings_artifact.jl path/to/bindings.jl X.Y.Z
+   julia --project create_bindings_artifact.jl path/to/bindings.jl X.Y.Z
    ```
    Here, `X.Y.Z` should be the P4est_jll.jl release version
    (in [semver](https://semver.org) format) for which the bindings have been
    generated, e.g., `2.3.1`. This will create a new artifact file that can be
-   attached as an asset to a new bindings release, e.g., `P4est.v2.3.1.tar.gz`.
+   attached as an asset to a new bindings release, e.g., `P4est.v2.3.1.tar.gz`,
+   and return its name to the terminal.
 3. **Generate entries for Artifacts.toml**  
    Note the *exact* release name of the P4est_jll.jl package for which the
    bindings have been generated. For example, for the p4est version `2.3.1`,
    they corresponding release name is `P4est-v2.3.1+0` (including the `+0`).
    Run the script [`generate_artifacts_toml.jl`](generate_artifacts_toml.jl) as
    ```bash
-   julia --project=@. generate_artifacts_tom.jl RELASE_NAME
+   julia --project generate_artifacts_toml.jl ARTIFACT_FILE RELASE_NAME
    ```
-   where `RELEASE_NAME` is the noted release name. Use the output of the script
-   to create a new entry in the
+   where `ARTIFACT_FILE` is the archive you created in the previous step and
+   `RELEASE_NAME` is the noted release name. Use the output of the script to
+   create a new entry in the
    [Entries for Artifacts.toml](#entries-for-artifactstoml) section below.
 4. **Create a new release**  
    [Create a new release](https://github.com/trixi-framework/P4est_jll_bindings/releases/newhttps://github.com/trixi-framework/P4est_jll_bindings/releases/new)
