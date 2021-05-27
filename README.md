@@ -20,6 +20,13 @@ automatically download the bindings, check out the
 
 
 ## Procedure for creating a new bindings release
+To use Julia scripts in this repository, you first need to install a few
+dependencies by executing the following command in the repository folder:
+```bash
+julia --project=@. -e 'import Pkg; Pkg.instantiate()'
+```
+This step is only necessary once.
+
 1. **Create new bindings**  
    Create a new bindings file, e.g., using the build process of P4est.jl with
    the environment variable `JULIA_P4EST_GENERATE_BINDINGS` set to `yes`.
@@ -27,7 +34,7 @@ automatically download the bindings, check out the
    To create a new artifact for a given bindings file, run
    [`create_bindings_artifact.jl`](create_bindings_artifact.jl) as follows:
    ```bash
-   julia create_bindings_artifact.jl path/to/bindings.jl X.Y.Z
+   julia --project=@. create_bindings_artifact.jl path/to/bindings.jl X.Y.Z
    ```
    Here, `X.Y.Z` should be the P4est_jll.jl release version
    (in [semver](https://semver.org) format) for which the bindings have been
@@ -39,7 +46,7 @@ automatically download the bindings, check out the
    they corresponding release name is `P4est-v2.3.1+0` (including the `+0`).
    Run the script [`generate_artifacts_toml.jl`](generate_artifacts_toml.jl) as
    ```bash
-   julia generate_artifacts_tom.jl RELASE_NAME
+   julia --project=@. generate_artifacts_tom.jl RELASE_NAME
    ```
    where `RELEASE_NAME` is the noted release name. Use the output of the script
    to create a new entry in the
@@ -51,14 +58,17 @@ automatically download the bindings, check out the
    bindings release file, e.g., `P4est.v2.3.1.tar.gz`. Then, publish the
    release.
 
+
 ## Authors
 P4est_jll_bindings was initiated by
 [Michael Schlottke-Lakemper](https://www.mi.uni-koeln.de/NumSim/schlottke-lakemper)
 (University of Cologne, Germany) and
 [Hendrik Ranocha](https://ranocha.de) (University of Münster, Germany).
 
+
 ## License
 P4est_jll_bindings is licensed under the MIT license (see [LICENSE.md](LICENSE.md)).
+
 
 ## Entries for Artifacts.toml
 
