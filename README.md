@@ -47,7 +47,7 @@ This step is only necessary once. Then, proceed as follows:
    Note the *exact* release name of the P4est_jll.jl release for which the
    bindings have been generated. They can be found on the P4est_jll.jl
    [release page](https://github.com/JuliaBinaryWrappers/P4est_jll.jl/releases).
-   For example, for the p4est version `2.3.1`, they corresponding release name
+   For example, for the p4est version `2.3.1`, the corresponding release name
    is `P4est-v2.3.1+0` (including the `+0`).  Run the script
    [`generate_artifacts_toml.jl`](generate_artifacts_toml.jl) as
    ```bash
