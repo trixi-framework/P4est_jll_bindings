@@ -59,7 +59,7 @@ This step is only necessary once. Then, proceed as follows:
    [Entries for Artifacts.toml](#entries-for-artifactstoml) section below, i.e.,
    edit this `README.md` and commit it to the repository.
 4. **Create a new release**  
-   [Create a new release](https://github.com/trixi-framework/P4est_jll_bindings/releases/newhttps://github.com/trixi-framework/P4est_jll_bindings/releases/new)
+   [Create a new release](https://github.com/trixi-framework/P4est_jll_bindings/releases/new)
    of the
    [P4est_jll_bindings](https://github.com/trixi-framework/P4est_jll_bindings)
    repository and use the release name from the previous step for both the `Tag
