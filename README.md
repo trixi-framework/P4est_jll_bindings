@@ -83,6 +83,15 @@ P4est_jll_bindings is licensed under the MIT license (see [LICENSE.md](LICENSE.m
 Please add new release at the top, i.e., the list is sorted by decreasing
 version number.
 
+* **P4est-v2.8.0+0**
+  ```toml
+  [libp4est]
+  git-tree-sha1 = "ab08f50b99b6c4060e331e5ece8352645c380dd5"
+  
+      [[libp4est.download]]
+      sha256 = "837eacdd075584af5a5e5f727973b0a216717919ab6e2bdd0200b222c3c3f38d"
+      url = "https://github.com/trixi-framework/P4est_jll_bindings/releases/download/P4est-v2.8.0+0/P4est.v2.8.0.tar.gz"
+  ```
 * **P4est-v2.3.1+0**
   ```toml
   [libp4est]
